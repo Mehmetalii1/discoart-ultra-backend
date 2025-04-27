@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const memoryPath = path.join(__dirname, '../memory/memory.json');
+const memoryPath = path.resolve(__dirname, '../memory/memory.json');
 
 // Hafızayı oku
 function readMemory() {
