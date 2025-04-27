@@ -5,8 +5,14 @@ const memoryPath = path.resolve(__dirname, '../memory/memory.json');
 
 // Hafızayı oku
 function readMemory() {
-    const data = fs.readFileSync(memoryPath, 'utf8');
-    return JSON.parse(data);
+    try {
+        const data = fs.readFileSync(memoryPath, 'utf8');
+        return JSON.parse(data);
+    } catch (error) {
+        console.error('Memory okunamadı, boş obje dönüldü:', error.message);
+        return { kullanıcılar: {} };
+    }
+}
 }
 
 // Hafızaya yaz
