@@ -1,6 +1,7 @@
+const path = require('path');
 const express = require('express');
 const app = express();
-const userRoutes = require('./routes/userRoutes');
+const userRoutes = require(path.join(__dirname, 'routes/userRoutes'));
 
 // Body verisini JSON olarak alabilmek için
 app.use(express.json());
